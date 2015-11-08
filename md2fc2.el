@@ -54,7 +54,7 @@
   (when (re-search-forward "^@@\\s-*\\(\\S-+\\)$" nil t)
     (let ((url (match-string-no-properties 1)))
       (setq md2fc2-product-url
-            (if (string-match-p "dmm\\.co\\.jp")
+            (if (string-match-p "dmm\\.co\\.jp" url)
                 (concat url md2fc2-dmm-account)
               url)))
     (let ((image-url (md2fc2--product-url (match-string-no-properties 1))))
