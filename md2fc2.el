@@ -83,20 +83,26 @@
              (match-string-no-properties 2)
              (match-string-no-properties 1)))))
 
+(defun md2fc2--kill-old-buffer ()
+  (let ((buf (get-buffer "*md2fc2*")))
+    (when buf
+      (kill-buffer buf))))
+
 ;;;###autoload
 (defun md2fc2 ()
   (interactive)
   (let ((markdown (buffer-substring-no-properties
                    (point-min) (point-max))))
-   (with-current-buffer (get-buffer-create "*md2fc2*")
-     (erase-buffer)
-     (insert markdown)
-     (goto-char (point-min))
-     (md2fc2--product-image)
-     (md2fc2--header1)
-     (md2fc2--header2)
-     (md2fc2--image)
-     (pop-to-buffer (current-buffer)))))
+    (md2fc2--kill-old-buffer)
+    (with-current-buffer (get-buffer-create "*md2fc2*")
+      (erase-buffer)
+      (insert markdown)
+      (goto-char (point-min))
+      (md2fc2--product-image)
+      (md2fc2--header1)
+      (md2fc2--header2)
+      (md2fc2--image)
+      (pop-to-buffer (current-buffer)))))
 
 (provide 'md2fc2)
 
