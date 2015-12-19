@@ -95,6 +95,7 @@
                    (point-min) (point-max))))
     (md2fc2--kill-old-buffer)
     (with-current-buffer (get-buffer-create "*md2fc2*")
+      (read-only-mode -1)
       (erase-buffer)
       (insert markdown)
       (goto-char (point-min))
@@ -102,6 +103,7 @@
       (md2fc2--header1)
       (md2fc2--header2)
       (md2fc2--image)
+      (read-only-mode +1)
       (pop-to-buffer (current-buffer)))))
 
 (provide 'md2fc2)
