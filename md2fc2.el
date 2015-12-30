@@ -104,7 +104,8 @@
       (md2fc2--header2)
       (md2fc2--image)
       (read-only-mode +1)
-      (pop-to-buffer (current-buffer)))))
+      (pop-to-buffer (current-buffer))
+      (goto-char (point-min)))))
 
 (provide 'md2fc2)
 
