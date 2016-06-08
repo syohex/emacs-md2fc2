@@ -29,8 +29,7 @@
 
 (defcustom md2fc2-dmm-account ""
   "DMM account"
-  :type 'string
-  :group 'md2fc2)
+  :type 'string)
 
 (defvar md2fc2-product-url nil)
 
