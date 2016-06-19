@@ -1,6 +1,6 @@
 ;;; md2fc2.el --- Markdown to fc2 format
 
-;; Copyright (C) 2015 by Syohei YOSHIDA
+;; Copyright (C) 2016 by Syohei YOSHIDA
 
 ;; Author: Syohei YOSHIDA <syohex@gmail.com>
 ;; URL: https://github.com/syohex/emacs-md2fc2
@@ -20,6 +20,8 @@
 ;; along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 ;;; Commentary:
+
+;; Convert markdown text into fc2 HTML.
 
 ;;; Code:
 
