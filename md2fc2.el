@@ -1,10 +1,11 @@
-;;; md2fc2.el --- Markdown to fc2 format
+;;; md2fc2.el --- Markdown to fc2 format -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2016 by Syohei YOSHIDA
 
 ;; Author: Syohei YOSHIDA <syohex@gmail.com>
 ;; URL: https://github.com/syohex/emacs-md2fc2
 ;; Version: 0.01
+;; Package-Requires: ((emacs "24"))
 
 ;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
