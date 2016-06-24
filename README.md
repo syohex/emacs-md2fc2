@@ -2,7 +2,7 @@
 
 Markdown to fc2 format
 
-## Convertion Rules
+## Conversion Rules
 
 | Markdown            | fc2 HTML                            |
 |:--------------------|:------------------------------------|
