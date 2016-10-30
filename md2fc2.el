@@ -34,7 +34,7 @@
   "DMM account"
   :type 'string)
 
-(defvar md2fc2-product-url nil)
+(defvar md2fc2--product-url nil)
 
 (defun md2fc2--large-image (url)
   (when (string-match "ps\\.jpg" url)
@@ -49,13 +49,13 @@
       (when (re-search-forward "<meta property=\"og:image\" content=\"\\([^\"]+\\)\"\\s-*/>" nil t)
         (let ((image (match-string-no-properties 1)))
           (format "<a href=\"%s\"><img src=\"%s\" /></a>"
-                  md2fc2-product-url (md2fc2--large-image image)))))))
+                  md2fc2--product-url (md2fc2--large-image image)))))))
 
 (defun md2fc2--product-image ()
   (goto-char (point-min))
   (when (re-search-forward "^@@\\s-*\\(\\S-+\\)$" nil t)
     (let ((url (match-string-no-properties 1)))
-      (setq md2fc2-product-url
+      (setq md2fc2--product-url
             (if (string-match-p "dmm\\.co\\.jp" url)
                 (concat url md2fc2-dmm-account)
               url)))
@@ -81,7 +81,7 @@
   (while (re-search-forward "^!\\[\\([^]]+\\)\\](\\([^)]+\\))" nil t)
     (replace-match
      (format "<a href=\"%s\" target=\"_blank\"><img src=\"%s\" alt=\"%s\" /></a>"
-             md2fc2-product-url
+             md2fc2--product-url
              (match-string-no-properties 2)
              (match-string-no-properties 1)))))
 
