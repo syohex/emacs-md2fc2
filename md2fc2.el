@@ -5,7 +5,7 @@
 ;; Author: Syohei YOSHIDA <syohex@gmail.com>
 ;; URL: https://github.com/syohex/emacs-md2fc2
 ;; Version: 0.01
-;; Package-Requires: ((emacs "24.3"))
+;; Package-Requires: ((emacs "25"))
 
 ;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -25,6 +25,8 @@
 ;; Convert markdown text into fc2 HTML.
 
 ;;; Code:
+
+(require 'subr-x)
 
 (defgroup md2fc2 nil
   "Markdown to fc2 blog format"
@@ -86,9 +88,8 @@
              (match-string-no-properties 1)))))
 
 (defun md2fc2--kill-old-buffer ()
-  (let ((buf (get-buffer "*md2fc2*")))
-    (when buf
-      (kill-buffer buf))))
+  (when-let ((buf (get-buffer "*md2fc2*")))
+    (kill-buffer buf)))
 
 ;;;###autoload
 (defun md2fc2 ()
