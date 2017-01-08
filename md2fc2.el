@@ -80,7 +80,7 @@
 
 (defun md2fc2--image ()
   (goto-char (point-min))
-  (while (re-search-forward "^!\\[\\([^]]+\\)\\](\\([^)]+\\))" nil t)
+  (while (re-search-forward "^!\\[\\([^]]*\\)\\](\\([^)]+\\))" nil t)
     (replace-match
      (format "<a href=\"%s\" target=\"_blank\"><img src=\"%s\" alt=\"%s\" /></a>"
              md2fc2--product-url
