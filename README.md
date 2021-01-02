@@ -13,6 +13,6 @@ Markdown to fc2 format
 
 ## Customization
 
-##### `md2fc2-dmm-account`
+### `md2fc2-dmm-account`
 
 Append dmm affiliate account to URL
